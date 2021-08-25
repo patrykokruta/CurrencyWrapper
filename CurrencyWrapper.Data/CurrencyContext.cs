@@ -1,4 +1,5 @@
-﻿using CurrencyWrapper.Data.Entities;
+﻿using CurrencyWrapper.Data.Configurations;
+using CurrencyWrapper.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,11 @@ namespace CurrencyWrapper.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseLazyLoadingProxies();
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new CurrencyExchangeConfiguration());
+            modelBuilder.ApplyConfiguration(new CurrencyConfiguration());
         }
     }
 }

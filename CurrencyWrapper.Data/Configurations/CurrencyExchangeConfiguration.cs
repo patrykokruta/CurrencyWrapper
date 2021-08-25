@@ -18,6 +18,9 @@ namespace CurrencyWrapper.Data.Configurations
             builder.Property(x => x.Date)
                 .HasColumnType("date")
                 .IsRequired();
+
+            builder.Property(x => x.Rate)
+                .HasColumnType("decimal(20,10)");
         }
     }
 }
