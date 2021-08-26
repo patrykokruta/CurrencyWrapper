@@ -1,6 +1,7 @@
 using CurrencyWrapper.Common.Logger;
 using CurrencyWrapper.Common.UnitOfWork;
 using CurrencyWrapper.Data;
+using CurrencyWrapper.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -29,8 +30,9 @@ namespace CurrencyWrapper.API
             services.AddControllers();
             services.AddLogger();
             services.AddCurrencyContext(Configuration);
+            services.AddIdentityContext(Configuration);
+            services.ConfigureJWT(Configuration);
             services.AddUnitOfWork();
-
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy", builder =>
