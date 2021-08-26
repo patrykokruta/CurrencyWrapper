@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyWrapper.Api", "CurrencyWrapper.API\CurrencyWrapper.Api.csproj", "{375F1B7A-E858-415D-9C69-D8661099CD36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyWrapper.Api", "CurrencyWrapper.API\CurrencyWrapper.Api.csproj", "{375F1B7A-E858-415D-9C69-D8661099CD36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyWrapper.Common", "CurrencyWrapper.Common\CurrencyWrapper.Common.csproj", "{BD4BB859-E550-4FA4-9153-8827089AD783}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyWrapper.Common", "CurrencyWrapper.Common\CurrencyWrapper.Common.csproj", "{BD4BB859-E550-4FA4-9153-8827089AD783}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{F1D77CAA-F0E3-4DEE-A645-58113BCA0456}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{F1D77CAA-F0E3-4DEE-A645-58113BCA0456}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyWrapper.Data", "CurrencyWrapper.Data\CurrencyWrapper.Data.csproj", "{8AF17DE5-671B-4FC6-9A0C-A4A042F22F55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyWrapper.Data", "CurrencyWrapper.Data\CurrencyWrapper.Data.csproj", "{8AF17DE5-671B-4FC6-9A0C-A4A042F22F55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyWrapper.Identity", "CurrencyWrapper.Identity\CurrencyWrapper.Identity.csproj", "{680E3D89-5EC4-4F1D-B219-8593172D75C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyWrapper.Identity", "CurrencyWrapper.Identity\CurrencyWrapper.Identity.csproj", "{680E3D89-5EC4-4F1D-B219-8593172D75C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyWrapper.Logic", "CurrencyWrapper.Logic\CurrencyWrapper.Logic.csproj", "{1AE4D7DD-53B1-41E2-BE3E-A841B19E8E00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{680E3D89-5EC4-4F1D-B219-8593172D75C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{680E3D89-5EC4-4F1D-B219-8593172D75C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{680E3D89-5EC4-4F1D-B219-8593172D75C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AE4D7DD-53B1-41E2-BE3E-A841B19E8E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AE4D7DD-53B1-41E2-BE3E-A841B19E8E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AE4D7DD-53B1-41E2-BE3E-A841B19E8E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AE4D7DD-53B1-41E2-BE3E-A841B19E8E00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

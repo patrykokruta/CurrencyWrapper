@@ -32,6 +32,7 @@ namespace CurrencyWrapper.API
             services.AddCurrencyContext(Configuration);
             services.AddIdentityContext(Configuration);
             services.ConfigureJWT(Configuration);
+            services.AddAuthenticationService();
             services.AddUnitOfWork();
             services.AddCors(options =>
             {

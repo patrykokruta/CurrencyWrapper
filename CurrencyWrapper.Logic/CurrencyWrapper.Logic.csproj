@@ -1,13 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CurrencyWrapper.Common\CurrencyWrapper.Common.csproj" />
-    <ProjectReference Include="..\CurrencyWrapper.Logic\CurrencyWrapper.Logic.csproj" />
+    <ProjectReference Include="..\CurrencyWrapper.Data\CurrencyWrapper.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,6 @@
-﻿using CurrencyWrapper.Identity.Models;
+﻿using CurrencyWrapper.Common.Logger;
+using CurrencyWrapper.Identity.Models;
+using CurrencyWrapper.Identity.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -9,16 +11,23 @@ using System.Threading.Tasks;
 
 namespace CurrencyWrapper.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/auth")]
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
         private readonly UserManager<IdentityUser> _userManager;
-        public AuthenticationController(UserManager<IdentityUser> userManager)
+        private readonly IAuthenticationService _authenticationService;
+        private readonly ILoggerService _loggerService;
+
+        public AuthenticationController(UserManager<IdentityUser> userManager,
+            IAuthenticationService authenticationService,
+            ILoggerService loggerService)
         {
             _userManager = userManager;
+            _authenticationService = authenticationService;
+            _loggerService = loggerService;
         }
-        [HttpPost]
+        [HttpPost("register")]
         public async Task<IActionResult> RegisterUser([FromBody] UserForRegistration userForRegistration)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -39,6 +48,16 @@ namespace CurrencyWrapper.Api.Controllers
             }
 
             return StatusCode(201);
+        }
+        [HttpPost("login")]
+        public async Task<IActionResult> Authenticate([FromBody] UserForAuthentication user)
+        {
+            if (!await _authenticationService.ValidateUser(user))
+            {
+                _loggerService.Log($"[{nameof(AuthenticationController)}]: Authentication failed. Wrong user name or password.", LogLevel.Normal);
+                return Unauthorized();
+            }
+            return Ok(new { Token = _authenticationService.CreateToken() });
         }
     }
 }
